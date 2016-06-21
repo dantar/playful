@@ -1,0 +1,2 @@
+reset=gain(sword)
+action(sword,dragon)=gain(torch)
