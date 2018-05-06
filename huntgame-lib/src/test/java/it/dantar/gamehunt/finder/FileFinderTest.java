@@ -20,9 +20,10 @@ public class FileFinderTest {
 	
 	@Before
 	public void testSetup() {
-		this.hunt_dir = this.getClass().getResource("data").getPath();
-		File f = new File(hunt_dir + "/gameA");
-		finder = new FileFinder(f);
+		this.hunt_dir = this.getClass().getClassLoader().getResource("data").getPath();
+		File file = new File(hunt_dir, "gameA");
+		Assert.assertTrue(file.exists());
+		finder = new FileFinder(file);
 	}
 	
 	@Test
